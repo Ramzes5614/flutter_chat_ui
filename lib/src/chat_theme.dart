@@ -104,7 +104,8 @@ abstract class ChatTheme {
     required this.userAvatarTextStyle,
     required this.userNameTextStyle,
     this.messageTimePadding,
-    this.messageTimeTextStyle,
+    this.sentMessageTimeTextStyle,
+    this.receivedMessageTimeTextStyle,
   });
 
   /// Icon for select attachment button.
@@ -281,7 +282,10 @@ abstract class ChatTheme {
   final TextStyle userNameTextStyle;
 
   /// Message time text style.
-  final TextStyle? messageTimeTextStyle;
+  final TextStyle? receivedMessageTimeTextStyle;
+
+  /// Message time text style.
+  final TextStyle? sentMessageTimeTextStyle;
 
   /// Message time padding.
   final EdgeInsetsGeometry? messageTimePadding;

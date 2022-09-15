@@ -249,7 +249,7 @@ class TextMessage extends StatelessWidget {
                 padding: theme.messageTimePadding ?? EdgeInsets.zero,
                 child: Text(
                   DateFormat('HH:mm').format(DateTime.fromMillisecondsSinceEpoch(message.createdAt!)),
-                  style: theme.messageTimeTextStyle,
+                  style: user.id == message.author.id ? theme.sentMessageTimeTextStyle : theme.receivedMessageTimeTextStyle,
                 ),
               ),
             ),
