@@ -242,9 +242,9 @@ class TextMessage extends StatelessWidget {
             textWidthBasis: TextWidthBasis.longestLine,
           ),
         if (message.createdAt != null)
-          IntrinsicWidth(
-            child: Align(
-              alignment: user.id == message.author.id ? Alignment.centerRight : Alignment.centerLeft,
+          Align(
+            alignment: user.id == message.author.id ? Alignment.centerRight : Alignment.centerLeft,
+            child: IntrinsicWidth(
               child: Padding(
                 padding: theme.messageTimePadding ?? EdgeInsets.zero,
                 child: Text(
