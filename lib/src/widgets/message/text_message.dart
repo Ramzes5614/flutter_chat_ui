@@ -143,7 +143,7 @@ class TextMessage extends StatelessWidget {
         user.id == message.author.id ? theme.sentEmojiMessageTextStyle : theme.receivedEmojiMessageTextStyle;
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: user.id == message.author.id ? CrossAxisAlignment.end : CrossAxisAlignment.start,
       children: [
         if (showName) nameBuilder?.call(message.author.id) ?? UserName(author: message.author),
         if (enlargeEmojis)
@@ -242,9 +242,9 @@ class TextMessage extends StatelessWidget {
             textWidthBasis: TextWidthBasis.longestLine,
           ),
         if (message.createdAt != null)
-          Align(
-            alignment: user.id == message.author.id ? Alignment.centerRight : Alignment.centerLeft,
-            child: IntrinsicWidth(
+          IntrinsicWidth(
+            child: Align(
+              alignment: user.id == message.author.id ? Alignment.centerRight : Alignment.centerLeft,
               child: Padding(
                 padding: theme.messageTimePadding ?? EdgeInsets.zero,
                 child: Text(
