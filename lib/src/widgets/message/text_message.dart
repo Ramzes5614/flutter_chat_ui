@@ -242,13 +242,15 @@ class TextMessage extends StatelessWidget {
             textWidthBasis: TextWidthBasis.longestLine,
           ),
         if (message.createdAt != null)
-          Align(
-            alignment: user.id == message.author.id ? Alignment.centerRight : Alignment.centerLeft,
-            child: Padding(
-              padding: theme.messageTimePadding ?? EdgeInsets.zero,
-              child: Text(
-                DateFormat('HH:mm').format(DateTime.fromMillisecondsSinceEpoch(message.createdAt!)),
-                style: theme.messageTimeTextStyle,
+          IntrinsicWidth(
+            child: Align(
+              alignment: user.id == message.author.id ? Alignment.centerRight : Alignment.centerLeft,
+              child: Padding(
+                padding: theme.messageTimePadding ?? EdgeInsets.zero,
+                child: Text(
+                  DateFormat('HH:mm').format(DateTime.fromMillisecondsSinceEpoch(message.createdAt!)),
+                  style: theme.messageTimeTextStyle,
+                ),
               ),
             ),
           ),
