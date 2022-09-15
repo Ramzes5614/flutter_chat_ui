@@ -103,6 +103,8 @@ abstract class ChatTheme {
     required this.userAvatarNameColors,
     required this.userAvatarTextStyle,
     required this.userNameTextStyle,
+    this.messageTimePadding,
+    this.messageTimeTextStyle,
   });
 
   /// Icon for select attachment button.
@@ -277,6 +279,12 @@ abstract class ChatTheme {
 
   /// User names text style. Color will be overwritten with [userAvatarNameColors].
   final TextStyle userNameTextStyle;
+
+  /// Message time text style.
+  final TextStyle? messageTimeTextStyle;
+
+  /// Message time padding.
+  final EdgeInsetsGeometry? messageTimePadding;
 }
 
 /// Default chat theme which extends [ChatTheme].
